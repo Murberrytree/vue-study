@@ -1,1 +1,17 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><title>admin</title><link href=./static/css/app.6aa7d58e06e6935f20624820f920ef50.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.4619ca7fe87f62808740.js></script><script type=text/javascript src=./static/js/vendor.c8931c1e41644ebffc2d.js></script><script type=text/javascript src=./static/js/app.0a2f818b1c11a2856db0.js></script></body></html>
+<!DOCTYPE html><html><head><title>Hello, Vue!</title><link href=./static/css/app.ac73ca0c5445a2a646d36e496a49fa69.css rel=stylesheet></head><body><div id=app><input type=text placeholder="할 일!" v-model=inputTodo v-on:keyup.enter=addTodo> <button v-on:click=addTodo>추가</button><ul><li v-for="todo in todos">{{ todo }}</li></ul></div><script src=./vue.js></script><script>new Vue({
+        el: '#app',
+        data: {
+            todos: [
+                '빨래하기',
+                '출근하기',
+                '청소하기'
+            ],
+            inputTodo: ''
+        },
+        methods: {
+            addTodo: function () {
+                this.todos.push(this.inputTodo);
+                this.inputTodo = '';
+            }
+        }
+    });</script><script type=text/javascript src=./static/js/manifest.ac4a06d5499a50232626.js></script><script type=text/javascript src=./static/js/vendor.a8b4a3ec4a770024c64a.js></script><script type=text/javascript src=./static/js/app.4ddf0ea42e0ddbd20fbc.js></script></body></html>
